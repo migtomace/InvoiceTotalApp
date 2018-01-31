@@ -57,8 +57,8 @@
 
     <EditText
         android:id="@+id/input_editText"
-        android:layout_width="167dp"
-        android:layout_height="31dp"
+        android:layout_width="145dp"
+        android:layout_height="35dp"
         android:layout_marginEnd="16dp"
         android:layout_marginTop="16dp"
         android:ems="10"
@@ -79,7 +79,7 @@
         app:layout_constraintTop_toBottomOf="@+id/input_editText" />
 
     <TextView
-        android:id="@+id/account_textView"
+        android:id="@+id/discount_textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="16dp"
@@ -98,5 +98,5 @@
         android:text="$135.00"
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/account_textView" />
+        app:layout_constraintTop_toBottomOf="@+id/discount_textView" />
 </android.support.constraint.ConstraintLayout>
