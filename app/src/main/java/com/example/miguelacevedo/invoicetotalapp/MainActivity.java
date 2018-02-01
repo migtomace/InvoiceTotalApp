@@ -2,6 +2,8 @@ package com.example.miguelacevedo.invoicetotalapp;
 
 import android.app.Activity;
 import java.text.NumberFormat;
+
+import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.KeyEvent;
 import android.widget.EditText;
@@ -18,6 +20,8 @@ public class MainActivity extends Activity implements TextView.OnEditorActionLis
 
     private String subtotalString;
 
+    private SharedPreferences savedValues;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -30,6 +34,7 @@ public class MainActivity extends Activity implements TextView.OnEditorActionLis
         totalTextView = findViewById(R.id.total_textView);
 
         subtotalEditText.setOnEditorActionListener(this);
+        savedValues = getSharedPreferences(name:"savedValues", MODE_PRIVATE)
     }
 
 
