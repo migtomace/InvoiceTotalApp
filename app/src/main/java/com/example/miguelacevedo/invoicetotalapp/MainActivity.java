@@ -34,9 +34,28 @@ public class MainActivity extends Activity implements TextView.OnEditorActionLis
         totalTextView = findViewById(R.id.total_textView);
 
         subtotalEditText.setOnEditorActionListener(this);
-        savedValues = getSharedPreferences(name:"savedValues", MODE_PRIVATE)
+        savedValues = getSharedPreferences("savedValues", MODE_PRIVATE);
     }
 
+    @Override
+    public void onPause(){
+
+        //save the string for the subtotal
+        SharedPreferences.Editor editor = savedValues.edit();
+        editor.putString("subtotalString",subtotalString);
+        editor.commit();
+
+        super.onPause();
+    }
+
+    @Override
+    public void onResume(){
+        super.onResume();
+        //restore the value of the subtotal to the saved value
+        subtotalString = savedValues.getString("subtotalString","");
+        subtotalEditText.setText(subtotalString);
+        calculateAndDisplay();
+    }
 
     public boolean onEditorAction(TextView textView, int i, KeyEvent keyEvent){
         calculateAndDisplay();
